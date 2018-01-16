@@ -9,18 +9,25 @@
 namespace App;
 
 
+
+
 class Match
 {
-    protected $mathces = [];
+    public $teams = [];
 
-    /**
-     * Match constructor.
-     * @param array $mathces
-     */
-    public function __construct(array $mathces)
+
+    public function __construct(Team $team)
     {
-        $this->mathces = $mathces;
+        $this->teams = $team;
     }
 
 
 }
+
+
+
+
+
+
+
+

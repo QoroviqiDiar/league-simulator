@@ -8,15 +8,17 @@ namespace App;
 class Team
 {
 
-    public $teamName = [];
+    public  $teams = [];
 
     /**
      * Team constructor.
      * @param $teamName
      */
-    public function __construct($teamName = [])
+    public function __construct($teams = [])
     {
-        $this->teamName = $teamName;
+        $this->teams = $teams;
     }
 
+
 }
+

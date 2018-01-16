@@ -12,5 +12,5 @@ use App\Match;
 
 class League
 {
-    
+
 }
