@@ -1,0 +1,22 @@
+{
+    "name": "asus/league-simulator",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Diar Qoroviqi",
+            "email": "qoroviqidiar@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    }
+
+}
+
