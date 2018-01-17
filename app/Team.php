@@ -1,24 +1,25 @@
 <?php
 
 
-
 namespace App;
 
 
 class Team
 {
 
-    public  $teams = [];
+    public $team;
 
     /**
      * Team constructor.
-     * @param $teamName
+     * @param $team
      */
-    public function __construct($teams = [])
+    public function __construct($team)
     {
-        $this->teams = $teams;
+        $this->team = $team;
     }
 
 
+
 }
+
 

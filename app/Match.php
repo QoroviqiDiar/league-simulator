@@ -13,15 +13,19 @@ namespace App;
 
 class Match
 {
-    public $teams = [];
+    protected $teams;
 
-
-    public function __construct(Team $team)
+    public function __construct(Teams $teams)
     {
-        $this->teams = $team;
+        $this->teams = $teams;
     }
 
+    public function getTeams()
+    {
+       return  $this->teams->teams();
+    }
 
+ 
 }
 
 

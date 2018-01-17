@@ -5,14 +5,34 @@ require 'vendor/autoload.php';
 use App\Match;
 use App\Team;
 
-$match = new Match(
-    new Team([
-        new Team('liverpool'),
-        new Team('Arsenal'),
-        new Team('Chelsea'),
-        new Team('Man City'),
-        new Team('Man United')
-    ])
-);
+//$teams =  new Team([
+//   new Team('liverpool'),
+//   new Team('arsenal'),
+//   new Team('man city'),
+//   new Team('man utd'),
+//]);
 
-var_dump($match->teams);
+$team = [
+    new Team('liverpool'),
+    new Team('arsenal'),
+    new Team('man city'),
+    new Team('man utd')
+];
+
+$teams = new \App\Teams($team);
+
+$teams->addTeam(new Team('totenham'));
+
+//foreach ($teams->teams as $index => $team) {
+//    echo $index . "<br />";
+//}
+
+//var_dump($teams->teams);
+
+$match = new Match($teams);
+//var_dump();
+
+foreach ($match->getTeams() as $index => $team) {
+    echo $index;
+}
+
