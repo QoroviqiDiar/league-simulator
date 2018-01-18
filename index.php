@@ -4,35 +4,57 @@ require 'vendor/autoload.php';
 
 use App\Match;
 use App\Team;
+use App\League;
 
-//$teams =  new Team([
-//   new Team('liverpool'),
-//   new Team('arsenal'),
-//   new Team('man city'),
-//   new Team('man utd'),
-//]);
+$league = new League();
+$league->addTeam();
 
-$team = [
-    new Team('liverpool'),
-    new Team('arsenal'),
-    new Team('man city'),
-    new Team('man utd')
-];
+//var_dump($league->getTeams());
+var_dump($league->play());
+die();
+
+$teamNames = ["Liverpool", "Arsenal","ManCity", "ManUTD"];
+$teams = [];
+$matches = [];
+
+foreach ($teamNames as $teamName) {
+    array_push($teams, new Team($teamName));
+}
+
+die(var_dump($teams));
+// Array / Associate Arrays
+foreach ($teams as $homeIndex => $homeTeam) {
+
+    foreach ($teams as $foreignIndex => $foreignTeam) {
+        die(var_dump($teams[$homeIndex]));
+    }
+}
+
+
 
 $teams = new \App\Teams($team);
 
 $teams->addTeam(new Team('totenham'));
 
-//foreach ($teams->teams as $index => $team) {
-//    echo $index . "<br />";
-//}
 
-//var_dump($teams->teams);
+
+
 
 $match = new Match($teams);
-//var_dump();
 
-foreach ($match->getTeams() as $index => $team) {
-    echo $index;
-}
+$allTeams = $match->getTeams();
 
+var_dump($allTeams);
+//foreach ($allTeams as $team) {
+//
+//    for ($i =0; $i < count($allTeams); $i++)
+//    {
+//        var_dump($team->team);
+//    }
+//}
+
+
+$league = new League();
+$league->scheduleMatches();
+$league->startLeague();
+$league->printTable();

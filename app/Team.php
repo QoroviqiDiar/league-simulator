@@ -7,15 +7,15 @@ namespace App;
 class Team
 {
 
-    public $team;
+    public $name;
 
     /**
      * Team constructor.
-     * @param $team
+     * @param $name Team name
      */
-    public function __construct($team)
+    public function __construct($name)
     {
-        $this->team = $team;
+        $this->name = $name;
     }
 
 
