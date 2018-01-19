@@ -13,6 +13,7 @@ namespace App;
 
 class Match
 {
+
     /**
      * @var Team
      */
@@ -33,11 +34,10 @@ class Match
      */
     private $foreignScore = 0;
 
-
     /**
      * Match constructor.
-     * @param Team|null $homeTeam
-     * @param Team|null $foreignTeam
+     * @param Team $homeTeam
+     * @param Team $foreignTeam
      */
     public function __construct(Team $homeTeam = null, Team $foreignTeam = null)
     {
@@ -45,13 +45,22 @@ class Match
         $this->foreignTeam = $foreignTeam;
     }
 
-    public function play(){
-        $this->homeScore = 3;
-        $this->foreignScore = 4;
+    public function play()
+    {
+        $this->homeScore = rand_int(0, 5);
+        $this->foreignScore = rand_int(0, 5);
     }
 
-    public function getWinningScore(){
-        return ($this->homeScore > $this->foreignScore) ? $this->homeScore : $this->foreignScore;
+    public function getWinningScore()
+    {
+        if  ($this->homeScore > $this->foreignScore)
+        {
+            return $this->homeScore;
+        } elseif ($this->foreignScore > $this->homeScore ) {
+            return $this->foreignScore;
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -73,22 +82,6 @@ class Match
     /**
      * @return Team
      */
-    public function getForeignTeam()
-    {
-        return $this->foreignTeam;
-    }
-
-    /**
-     * @param Team $foreignTeam
-     */
-    public function setForeignTeam(Team $foreignTeam)
-    {
-        $this->foreignTeam = $foreignTeam;
-    }
-
-    /**
-     * @return Team
-     */
     public function getHomeScore()
     {
         return $this->homeScore;
@@ -105,10 +98,27 @@ class Match
     /**
      * @return Team
      */
+    public function getForeignTeam()
+    {
+        return $this->foreignTeam;
+    }
+
+    /**
+     * @param Team $foreignTeam
+     */
+    public function setForeignTeam(Team $foreignTeam)
+    {
+        $this->foreignTeam = $foreignTeam;
+    }
+
+    /**
+     * @return Team
+     */
     public function getForeignScore()
     {
         return $this->foreignScore;
     }
+
 
     /**
      * @param Team $foreignScore
@@ -117,6 +127,7 @@ class Match
     {
         $this->foreignScore = $foreignScore;
     }
+
 
 }
 
