@@ -6,10 +6,28 @@ use App\Match;
 use App\Team;
 use App\League;
 
-$league  = new League();
+//
+//$teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Totenham'];
+//$matches = [];
+//
+//foreach ($teamNames as $teamName) {
+//    $m = array_rand($teamNames, 2);
+//}
+//
+//
+//$homeTeam = $teamNames[$m[0]];
+//$foreignTeam = $teamNames[$m[1]];
+//echo $homeTeam;
+//echo $foreignTeam; die();
+
+
+$league = new League();
 
 $league->addTeam();
 
+$league->scheduleMatches();
+
+var_dump($league->matches);
 
 //$reverseTeams = array_reverse($league->teams);
 //
@@ -18,10 +36,6 @@ $league->addTeam();
 //        die(var_dump($reverseTeams[$foreignIndex]));
 //    }
 //}
-
-
-$league->scheduleMatches();
-var_dump($league->matches);
 
 
 //

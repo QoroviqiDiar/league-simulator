@@ -14,7 +14,7 @@ class League
 {
 
 
-    public $teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Portsmouth'];
+    public $teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Totenham'];
     public $teams = [];
 
     public $matches = [];
@@ -28,28 +28,32 @@ class League
     }
 
 
-    // value types, reference types, and object instances.
     public function scheduleMatches()
     {
-
         $reverseTeams = array_reverse($this->teams);
+
         foreach ($this->teams as $homeIndex => $homeTeam) {
             foreach ($reverseTeams as $foreignIndex => $foreignTeam) {
                 if ($homeTeam !== $foreignTeam) {
-                    $match = new Match(new Team($homeTeam), new Team($foreignTeam));
+                    $match = new Match($homeTeam, $foreignTeam);
+                    $this->addMatch($match);
                 }
-                $this->addMatch($match);
             }
         }
+    }
+
+    public function play()
+    {
+
     }
 
     public function startLeague()
     {
         foreach ($this->matches as $match) {
-
+            return null;
         }
     }
-    
+
     public function printTable()
     {
         foreach ($this->matches as $match) {
