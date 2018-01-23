@@ -47,8 +47,8 @@ class Match
 
     public function play()
     {
-        $this->homeScore = rand_int(0, 5);
-        $this->foreignScore = rand_int(0, 5);
+        $this->homeScore = random_int(0,5);
+        $this->foreignScore = random_int(0, 5);
     }
 
     public function getWinningScore()

@@ -9,7 +9,11 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "symfony/symfony": "^3.4",
+        "symfony/finder": "^3.4",
+        "symfony/console": "^3.4"
+    },
 
 
     "autoload": {
@@ -19,4 +23,3 @@
     }
 
 }
-
