@@ -1,19 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Diar
- * Date: 1/16/2018
- * Time: 2:43 PM
- */
+<?php namespace App\Entities;
 
-namespace App\Entities\League;
-
-use App\Entities\League\League;
-use App\Entities\Match\SoccerMatch;
-
-
-use App\Entities\Team\SoccerTeam;
-use Symfony\Component\Console\Command\Command;
+use App\Abstractions\League;
+use App\Entities\SoccerMatch;
+use App\Entities\SoccerTeam;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -22,13 +11,8 @@ class SoccerLeague extends League
 {
 
 
-   public $teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Totenham'];
-//    public $teams = [];
-//
-//    public $matches = [];
-//
-//
-//    public $tableRow = [];
+   protected $teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Totenham'];
+
 
 
 

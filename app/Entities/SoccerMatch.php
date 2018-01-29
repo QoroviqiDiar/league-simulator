@@ -1,15 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Asus
- * Date: 1/16/2018
- * Time: 2:36 PM
- */
+<?php namespace App\Entities;
 
-namespace App\Entities\Match;
-
-use App\Entities\Team\SoccerTeam;
-//use App\Entities\Match\
+use App\Entities\SoccerTeam;
+use App\Abstractions\Match;
 
 class SoccerMatch extends Match
 {

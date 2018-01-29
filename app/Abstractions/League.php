@@ -1,12 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: egzon
- * Date: 18-01-29
- * Time: 11.32.PD
- */
-
-namespace App\Entities\League;
+<?php namespace App\Abstractions;
 
 
 

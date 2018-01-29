@@ -1,12 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: egzon
- * Date: 18-01-29
- * Time: 11.13.PD
- */
-
-namespace App\Entities\Match;
+<?php namespace App\Abstractions;
 
 
 use App\Entities\Team\SoccerTeam;

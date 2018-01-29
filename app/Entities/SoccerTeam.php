@@ -1,9 +1,7 @@
-<?php
+<?php namespace App\Entities;
 
 
-namespace App\Entities\Team;
-
-use App\Entities\Team\Team;
+use App\Abstractions\Team;
 
 
 class SoccerTeam extends Team
