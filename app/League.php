@@ -22,14 +22,14 @@ class League extends Command
 
     public $teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Totenham'];
     public $teams = [];
-    public $matchesInformation = [];
+
     public $matches = [];
 
-    // Table Console Row
+
     public $tableRow = [];
 
 
-    public function addTeam()
+    public function prepareTeams()
     {
         foreach ($this->teamNames as $teamName) {
             array_push($this->teams, new Team($teamName));
@@ -39,10 +39,8 @@ class League extends Command
 
     public function scheduleMatches()
     {
-        $reverseTeams = array_reverse($this->teams);
-
         foreach ($this->teams as $homeIndex => $homeTeam) {
-            foreach ($reverseTeams as $foreignIndex => $foreignTeam) {
+            foreach ($this->teams as $foreignIndex => $foreignTeam) {
                 if ($homeTeam !== $foreignTeam) {
                     $match = new Match($homeTeam, $foreignTeam);
                     $this->addMatch($match);
@@ -60,7 +58,7 @@ class League extends Command
         }
     }
 
-    public function tableRow()
+    public function prepareTableRows()
     {
         foreach ($this->matches as $match) {
             array_push($this->tableRow, [$match->getHomeTeam()->name, $match->getHomeScore(), $match->getForeignScore(), $match->getForeignTeam()->name]);
@@ -77,15 +75,11 @@ class League extends Command
             $table
                 ->setHeaders(array('Home Team', 'Result', 'Away Team'))
                 ->addRow(
-                    array($this->tableRow[$index][0], $this->tableRow[$index][1] . " : " . $this->tableRow[$index][2], $this->tableRow[$index][3])
+                    array($tableRow[0], $tableRow[1] . " : " . $tableRow[2], $tableRow[3])
                 );
 
         }
 
-
-//                array('9971-5-0210-0', 'A Tale of Two Cities', 'Charles Dickens'),
-//                array('960-425-059-0', 'The Lord of the Rings', 'J. R. R. Tolkien'),
-//                array('80-902734-1-6', 'And Then There Were None', 'Agatha Christie'),
 
         $table->render();
     }

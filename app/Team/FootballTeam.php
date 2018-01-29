@@ -1,13 +1,11 @@
 <?php
 
 
-namespace App;
+namespace App\Team;
 
 
-class Team
+class FootballTeam extends \Team
 {
-
-    public $name;
 
     /**
      * Team constructor.
