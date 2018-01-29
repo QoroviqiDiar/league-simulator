@@ -4,12 +4,12 @@
 namespace App\Team;
 
 
-class FootballTeam extends \Team
+class SoccerTeam extends \Team
 {
 
     /**
      * Team constructor.
-     * @param $name Team name
+     * @param $name SoccerTeam name
      */
     public function __construct($name)
     {

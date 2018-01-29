@@ -9,37 +9,17 @@
 namespace App;
 
 
+use App\Team\SoccerTeam;
+use App\Match\Match;
 
-
-class Match
+class SoccerMatch extends Match
 {
-
-    /**
-     * @var Team
-     */
-    private $homeTeam;
-
-    /**
-     * @var Team
-     */
-    private $homeScore = 0;
-
-    /**
-     * @var Team
-     */
-    private $foreignTeam;
-
-    /**
-     * @var Team
-     */
-    private $foreignScore = 0;
-
     /**
      * Match constructor.
-     * @param Team $homeTeam
-     * @param Team $foreignTeam
+     * @param SoccerTeam $homeTeam
+     * @param SoccerTeam $foreignTeam
      */
-    public function __construct(Team $homeTeam = null, Team $foreignTeam = null)
+    public function __construct(SoccerTeam $homeTeam = null, SoccerTeam $foreignTeam = null)
     {
         $this->homeTeam = $homeTeam;
         $this->foreignTeam = $foreignTeam;
@@ -47,16 +27,15 @@ class Match
 
     public function play()
     {
-        $this->homeScore = random_int(0,5);
+        $this->homeScore = random_int(0, 5);
         $this->foreignScore = random_int(0, 5);
     }
 
     public function getWinningScore()
     {
-        if  ($this->homeScore > $this->foreignScore)
-        {
+        if ($this->homeScore > $this->foreignScore) {
             return $this->homeScore;
-        } elseif ($this->foreignScore > $this->homeScore ) {
+        } elseif ($this->foreignScore > $this->homeScore) {
             return $this->foreignScore;
         } else {
             return null;
@@ -64,7 +43,7 @@ class Match
     }
 
     /**
-     * @return Team
+     * @return SoccerTeam
      */
     public function getHomeTeam()
     {
@@ -72,15 +51,15 @@ class Match
     }
 
     /**
-     * @param Team $homeTeam
+     * @param SoccerTeam $homeTeam
      */
-    public function setHomeTeam(Team $homeTeam)
+    public function setHomeTeam(SoccerTeam $homeTeam)
     {
         $this->homeTeam = $homeTeam;
     }
 
     /**
-     * @return Team
+     * @return SoccerTeam
      */
     public function getHomeScore()
     {
@@ -88,15 +67,15 @@ class Match
     }
 
     /**
-     * @param Team $homeScore
+     * @param SoccerTeam $homeScore
      */
-    public function setHomeScore(Team $homeScore)
+    public function setHomeScore(SoccerTeam $homeScore)
     {
         $this->homeScore = $homeScore;
     }
 
     /**
-     * @return Team
+     * @return SoccerTeam
      */
     public function getForeignTeam()
     {
@@ -104,15 +83,15 @@ class Match
     }
 
     /**
-     * @param Team $foreignTeam
+     * @param SoccerTeam $foreignTeam
      */
-    public function setForeignTeam(Team $foreignTeam)
+    public function setForeignTeam(SoccerTeam $foreignTeam)
     {
         $this->foreignTeam = $foreignTeam;
     }
 
     /**
-     * @return Team
+     * @return SoccerTeam
      */
     public function getForeignScore()
     {
@@ -121,9 +100,9 @@ class Match
 
 
     /**
-     * @param Team $foreignScore
+     * @param SoccerTeam $foreignScore
      */
-    public function setForeignScore(Team $foreignScore)
+    public function setForeignScore(SoccerTeam $foreignScore)
     {
         $this->foreignScore = $foreignScore;
     }

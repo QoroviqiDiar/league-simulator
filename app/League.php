@@ -8,7 +8,7 @@
 
 namespace App;
 
-use App\Match;
+use App\SoccerMatch;
 
 
 use Symfony\Component\Console\Command\Command;
@@ -42,7 +42,7 @@ class League extends Command
         foreach ($this->teams as $homeIndex => $homeTeam) {
             foreach ($this->teams as $foreignIndex => $foreignTeam) {
                 if ($homeTeam !== $foreignTeam) {
-                    $match = new Match($homeTeam, $foreignTeam);
+                    $match = new SoccerMatch($homeTeam, $foreignTeam);
                     $this->addMatch($match);
                 }
             }
@@ -85,7 +85,7 @@ class League extends Command
     }
 
 
-    private function addMatch(Match $match)
+    private function addMatch(SoccerMatch $match)
     {
         array_push($this->matches, $match);
     }
