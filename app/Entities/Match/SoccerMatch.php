@@ -6,11 +6,10 @@
  * Time: 2:36 PM
  */
 
-namespace App;
+namespace App\Entities\Match;
 
-
-use App\Team\SoccerTeam;
-use App\Match\Match;
+use App\Entities\Team\SoccerTeam;
+//use App\Entities\Match\
 
 class SoccerMatch extends Match
 {
@@ -91,7 +90,7 @@ class SoccerMatch extends Match
     }
 
     /**
-     * @return SoccerTeam
+     * @return SoccerTeam $foreignScore
      */
     public function getForeignScore()
     {

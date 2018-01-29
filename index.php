@@ -2,16 +2,18 @@
 
 require 'vendor/autoload.php';
 
-use App\League;
+use App\Entities\League\SoccerLeague;
 
 
-$league = new League();
+$league = new SoccerLeague();
 
 $league->prepareTeams();
 
 $league->scheduleMatches();
 
 $league->startLeague();
+
+
 
 $league->prepareTableRows();
 

@@ -6,10 +6,12 @@
  * Time: 11.00.PD
  */
 
+namespace App\Entities\Team;
+
 abstract class Team
 {
     /**
      * @var
      */
-    protected $name;
+    public $name;
 }

@@ -1,10 +1,12 @@
 <?php
 
 
-namespace App\Team;
+namespace App\Entities\Team;
+
+use App\Entities\Team\Team;
 
 
-class SoccerTeam extends \Team
+class SoccerTeam extends Team
 {
 
     /**

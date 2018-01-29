@@ -6,10 +6,10 @@
  * Time: 11.13.PD
  */
 
-namespace App\Match;
+namespace App\Entities\Match;
 
 
-use App\Team\SoccerTeam;
+use App\Entities\Team\SoccerTeam;
 
 abstract class Match
 {

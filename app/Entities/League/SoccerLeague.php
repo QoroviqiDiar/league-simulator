@@ -6,33 +6,37 @@
  * Time: 2:43 PM
  */
 
-namespace App;
+namespace App\Entities\League;
 
-use App\SoccerMatch;
+use App\Entities\League\League;
+use App\Entities\Match\SoccerMatch;
 
 
+use App\Entities\Team\SoccerTeam;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
 
-class League extends Command
+class SoccerLeague extends League
 {
 
 
-    public $teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Totenham'];
-    public $teams = [];
+   public $teamNames = ["Liverpool", "Arsenal", "ManCity", "ManUTD", 'West Ham', 'Totenham'];
+//    public $teams = [];
+//
+//    public $matches = [];
+//
+//
+//    public $tableRow = [];
 
-    public $matches = [];
 
-
-    public $tableRow = [];
 
 
     public function prepareTeams()
     {
         foreach ($this->teamNames as $teamName) {
-            array_push($this->teams, new Team($teamName));
+            array_push($this->teams, new SoccerTeam($teamName));
         }
     }
 
