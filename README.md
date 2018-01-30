@@ -12,7 +12,18 @@ The Entity `SoccerLeague.php` extends the Abstract Class `League.php`, it contai
 
 ## Runing the application
 
-The `index.php` file create a new object called `$league` of `SoccerLeague()` class and calls the functions of `SoccerLeague` class. First he call prepareTeams() to prepare the teams than scheduleMatches() to scedule the matches than startLeague() for playing mathces than prepareTableRows() to create a row for each match than calls printTable() to print the table in console.
+The `index.php` file create a new object called `$league` of `SoccerLeague()` class and calls the functions of `SoccerLeague` class. 
+> $league = new SoccerLeague();
+
+> $league->prepareTeams();
+
+> $league->scheduleMatches();
+
+> $league->startLeague();
+
+> $league->prepareTableRows();
+
+> $league->printTable();
 
 
 ## Displaying the table in console
